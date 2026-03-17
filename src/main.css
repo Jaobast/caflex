@@ -1,0 +1,42 @@
+@font-face { font-family: 'Medium'; src: url('/fonts/LibreFranklin-Medium.ttf');}
+@font-face { font-family: 'Regular'; src: url('/fonts/LibreFranklin-Regular.ttf');}
+@font-face { font-family: 'Light'; src: url('/fonts/LibreFranklin-Light.ttf');}
+@font-face { font-family: 'ExtraLight'; src: url('/fonts/LibreFranklin-ExtraLight.ttf');}
+
+:root{
+    --light: #F8F3E6;
+    --primary: #002B8A;
+    --coffee: #694629;
+
+    --gap-sm: 12px;
+    --gap-md: 24px;
+    --gap-lg: 32px;
+}
+
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+    background-color: var(--light);
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Regular';
+    color: var(--primary);
+    padding-bottom: 20px;
+}
+
+img{
+    object-fit: cover;
+}
+
+a, button.bttn{
+    font-family: 'Medium';
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+}
+
+button.bttn{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+}

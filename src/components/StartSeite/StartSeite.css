@@ -1,0 +1,50 @@
+.StartSeite{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    padding-top: var(--gap-md);
+}
+
+.StartSeite img.logo{
+    width: min(25vw, 200px);
+    margin: 0 auto;
+}
+
+.StartSeite section{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+}
+
+.StartSeite section.OneCard-container{
+    flex-direction: row;
+}
+
+.OneCard-container > * {
+    flex: 0 0 auto;}
+
+.padding-left{ padding-left: var(--gap-md);}
+
+.AllCafes{
+    display: flex;
+    gap: var(--gap-sm);
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.AllCafes,
+.OneCard-container{
+    overflow-x: auto;
+    padding: 0 var(--gap-md);
+    scrollbar-width: none;
+}
+
+.AllCafes::-webkit-scrollbar,
+.OneCard-container::-webkit-scrollbar{
+    display: none;
+}
+
+.AllCafes > *{
+    flex: 0 0 auto;
+}
+

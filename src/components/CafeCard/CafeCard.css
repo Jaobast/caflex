@@ -1,0 +1,45 @@
+.CafeCard{
+    width: min(40vw, 200px);
+
+    display: flex; flex-direction: column;
+    overflow: hidden;
+}
+
+button.CafeCard, button.OneCard{
+    background-color: transparent;
+    color: var(--primary);
+    text-align: start;
+    font-family: 'Regular';
+    border: none;
+}
+
+.CafeCard img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+}
+
+.CafeCard .info{
+    padding: 4px 2px;
+
+    & h3{ font-size: 14px;}
+    & p{ font-size: 12px; opacity: 0.6;}
+}
+
+.OneCard .info{
+    padding: 4px 2px;
+
+    & h3{ font-size: 18px;}
+    & .spruch{ font-size: 14px;}
+    & .stadtteil{ font-size: 12px; opacity: 0.6;}
+}
+
+.OneCard{
+    width: min(calc(80vw + 10px), 410px);
+}
+
+.OneCard img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+}
