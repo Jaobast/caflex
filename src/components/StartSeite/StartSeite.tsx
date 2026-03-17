@@ -3,6 +3,7 @@ import cafesData from "../CafeDB.json";
 import {CafeCard, CafeCardLarge} from "../CafeCard/CafeCard";
 
 import './StartSeite.css'
+import logo from '../../assets/svg/logo.svg';
 
 const Startseite = () => {
     const cafes = cafesData.cafes;
@@ -15,7 +16,7 @@ const Startseite = () => {
 
     return (
         <div className="StartSeite">
-            <img className="logo" src="/svg/logo.svg" alt="logo" />
+            <img className="logo" src={logo} alt="logo" />
             <section className="OneCard-container">
                 {randomCafes.map((cafe) => (
                     <CafeCardLarge
