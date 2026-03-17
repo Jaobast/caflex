@@ -11,20 +11,20 @@ function CafePage() {
   useBodyClass("no-scroll");
 
   const mapaImagens: Record<string, string> = {
-  "Stadtmitte": "/img/map/Stadtmitte.jpg",
-  "Little Tokyo": "/img/map/LittleTokyo.jpg",
-  "Altstadt": "/img/map/Altstadt.jpg",
-  "Bilk": "/img/map/Bilk.jpg",
-  "Oberbilk": "/img/map/Oberbilk.jpg",
-  "Unterbilk": "/img/map/Unterbilk.jpg",
-  "Friedrichstadt": "/img/map/Friedrichstadt.jpg",
-  "Pempelfort": "/img/map/Pempelfort.jpg",
-  "Derendorf": "/img/map/Derendorf.jpg",
-  "Golzheim": "/img/map/Golzheim.jpg",
-  "Oberkassel": "/img/map/Oberkassel.jpg",
-  "Medienhafen": "/img/map/Medienhafen.jpg",
-  "Flingern": "/img/map/Flingern.jpg",
-  "Carlstadt": "/img/map/Carlstadt.jpg"
+  "Stadtmitte": "/caflex/img/map/Stadtmitte.jpg",
+  "Little Tokyo": "/caflex/img/map/LittleTokyo.jpg",
+  "Altstadt": "/caflex/img/map/Altstadt.jpg",
+  "Bilk": "/caflex/img/map/Bilk.jpg",
+  "Oberbilk": "/caflex/img/map/Oberbilk.jpg",
+  "Unterbilk": "/caflex/img/map/Unterbilk.jpg",
+  "Friedrichstadt": "/caflex/img/map/Friedrichstadt.jpg",
+  "Pempelfort": "/caflex/img/map/Pempelfort.jpg",
+  "Derendorf": "/caflex/img/map/Derendorf.jpg",
+  "Golzheim": "/caflex/img/map/Golzheim.jpg",
+  "Oberkassel": "/caflex/img/map/Oberkassel.jpg",
+  "Medienhafen": "/caflex/img/map/Medienhafen.jpg",
+  "Flingern": "/caflex/img/map/Flingern.jpg",
+  "Carlstadt": "/caflex/img/map/Carlstadt.jpg"
   };
 
   return (
@@ -39,7 +39,7 @@ function CafePage() {
             <div className="horizontal">
               <div className="right">
                 <div className="star-container">
-                  <img src="/svg/star.svg" alt="star icon" />
+                  <img src="/caflex/svg/star.svg" alt="star icon" />
                   <p>{cafe?.bewertung}</p>
                   <p className="opacity">{"(" + cafe?.bewertunganzahl + ")"}</p>
                 </div>
@@ -49,14 +49,14 @@ function CafePage() {
               <div className="left">
                 {cafe?.instagram ? (
                   <a href={cafe.instagram} target="_blank">
-                    <img src="/svg/instagram.svg" alt="instagram icon" />
-                  </a> ) : ( <img className="null" src="/svg/instagram.svg" alt="instagram icon" />)
+                    <img src="/caflex/svg/instagram.svg" alt="instagram icon" />
+                  </a> ) : ( <img className="null" src="/caflex/svg/instagram.svg" alt="instagram icon" />)
                 }
 
                 {cafe?.website ? (
                   <a href={cafe.website} target="_blank">
-                    <img src="/svg/internet.svg" alt="internet icon" />
-                  </a>) : ( <img className="null" src="/svg/internet.svg" alt="internet icon" />)
+                    <img src="/caflex/svg/internet.svg" alt="internet icon" />
+                  </a>) : ( <img className="null" src="/caflex/svg/internet.svg" alt="internet icon" />)
                 }
               </div>
             </div>
