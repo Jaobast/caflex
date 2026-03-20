@@ -1,45 +1,71 @@
-.CafeCard{
-    width: min(40vw, 200px);
-
-    display: flex; flex-direction: column;
-    overflow: hidden;
-}
-
-button.CafeCard, button.OneCard{
+button.CafeCard, button.CardLarge, button.CardSmall{
     background-color: transparent;
     color: var(--primary);
     text-align: start;
     font-family: 'Regular';
     border: none;
+
+    & h2{
+        font-size: 16px;
+    }
 }
 
-.CafeCard img{
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 12px;
+
+.CafeCard{
+    width: min(40vw, 200px);
+
+    display: flex; flex-direction: column;
+    overflow: hidden;
+
+    & img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+    }
+
+    .info{
+        padding: 4px 2px;
+
+        & h3{ font-size: 14px;}
+        & p{ font-size: 12px; opacity: 0.6;}
+    }
 }
 
-.CafeCard .info{
-    padding: 4px 2px;
 
-    & h3{ font-size: 14px;}
-    & p{ font-size: 12px; opacity: 0.6;}
-}
-
-.OneCard .info{
-    padding: 4px 2px;
-
-    & h3{ font-size: 18px;}
-    & .spruch{ font-size: 14px;}
-    & .stadtteil{ font-size: 12px; opacity: 0.6;}
-}
-
-.OneCard{
+.CardLarge{
     width: min(calc(80vw + 10px), 410px);
+
+    & img{
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 16px;
+    }
+
+    & .info{
+        padding: 4px 2px;
+
+        & h3{ font-size: 18px;}
+        & .spruch{ font-size: 14px;}
+        & .stadtteil{ font-size: 12px; opacity: 0.6;}
+    }
 }
 
-.OneCard img{
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 16px;
+.CardSmall{
+    display: flex; gap: 8px;
+    width: 320px;
+
+    & img{
+        width: 80px;
+        aspect-ratio: 1/1;
+        border-radius: 8px;
+    }
+
+    & .info{
+        display: flex; flex-direction: column;
+        padding: 4px 2px;
+
+        & h3{ font-size: 18px;}
+        & .spruch{ font-size: 14px;}
+        & .stadtteil{ font-size: 12px; opacity: 0.6;}
+    }
 }

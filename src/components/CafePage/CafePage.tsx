@@ -1,30 +1,45 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useBodyClass } from "../../hooks/useBodyClass";
-import cafesData from "../CafeDB.json";
+import cafesList from "../CafesList.json";
 import './CafePage.css'
 
 function CafePage() {
   const { id } = useParams();
 
-  const cafe = cafesData.cafes.find(object => object.id === id);
+
+  const cityEntry = Object.entries(cafesList).find(([, cafes]) =>
+    cafes.some(object => object.id === id)
+  );
+
+  const city = cityEntry?.[0];
+  const cafe = cityEntry?.[1].find(object => object.id === id);
+
+  const [gallery, setGallery] = useState(false);
 
   useBodyClass("no-scroll");
 
   const mapaImagens: Record<string, string> = {
-  "Stadtmitte": "/caflex/img/map/Stadtmitte.jpg",
-  "Little Tokyo": "/caflex/img/map/LittleTokyo.jpg",
-  "Altstadt": "/caflex/img/map/Altstadt.jpg",
-  "Bilk": "/caflex/img/map/Bilk.jpg",
-  "Oberbilk": "/caflex/img/map/Oberbilk.jpg",
-  "Unterbilk": "/caflex/img/map/Unterbilk.jpg",
-  "Friedrichstadt": "/caflex/img/map/Friedrichstadt.jpg",
-  "Pempelfort": "/caflex/img/map/Pempelfort.jpg",
-  "Derendorf": "/caflex/img/map/Derendorf.jpg",
-  "Golzheim": "/caflex/img/map/Golzheim.jpg",
-  "Oberkassel": "/caflex/img/map/Oberkassel.jpg",
-  "Medienhafen": "/caflex/img/map/Medienhafen.jpg",
-  "Flingern": "/caflex/img/map/Flingern.jpg",
-  "Carlstadt": "/caflex/img/map/Carlstadt.jpg"
+  "Stadtmitte": "/caflex/img/map/ddorf/Stadtmitte.jpg",
+  "Little Tokyo": "/caflex/img/map/ddorf/LittleTokyo.jpg",
+  "Altstadt": "/caflex/img/map/ddorf/Altstadt.jpg",
+  "Bilk": "/caflex/img/map/ddorf/Bilk.jpg",
+  "Oberbilk": "/caflex/img/map/ddorf/Oberbilk.jpg",
+  "Unterbilk": "/caflex/img/map/ddorf/Unterbilk.jpg",
+  "Friedrichstadt": "/caflex/img/map/ddorf/Friedrichstadt.jpg",
+  "Pempelfort": "/caflex/img/map/ddorf/Pempelfort.jpg",
+  "Derendorf": "/caflex/img/map/ddorf/Derendorf.jpg",
+  "Golzheim": "/caflex/img/map/ddorf/Golzheim.jpg",
+  "Oberkassel": "/caflex/img/map/ddorf/Oberkassel.jpg",
+  "Medienhafen": "/caflex/img/map/ddorf/Medienhafen.jpg",
+  "Flingern": "/caflex/img/map/ddorf/Flingern.jpg",
+  "Carlstadt": "/caflex/img/map/ddorf/Carlstadt.jpg",
+
+  "Deutz": "/caflex/img/map/koln/Deutz.jpg",
+  "Neustadt Süd": "/caflex/img/map/koln/NeustadtSüd.jpg",
+  "Nippes": "/caflex/img/map/koln/Nippes.jpg",
+  "Ehrenfeld": "/caflex/img/map/koln/Ehrenfeld.jpg",
+  "Ringe": "/caflex/img/map/koln/Ringe.jpg",
   };
 
   return (
@@ -43,7 +58,7 @@ function CafePage() {
                   <p>{cafe?.bewertung}</p>
                   <p className="opacity">{"(" + cafe?.bewertunganzahl + ")"}</p>
                 </div>
-                <p>Düsseldorf</p>
+                <p>{city}</p>
                 <p className="opacity">{cafe?.stadtteil}</p>
               </div>
               <div className="left">
@@ -62,19 +77,25 @@ function CafePage() {
             </div>
           </div>
 
-          <div className="map">
+          <div className={`map ${gallery ? "gallery-open" : ""}`}>
             <button className="bttn">
               <a href={`https://maps.apple.com/?q=${encodeURIComponent(cafe?.adresse ?? "")}`}>
                 Karte schauen
               </a>
             </button>
-            <img src={mapaImagens[cafe?.stadtteil ?? ""]} alt="" />
+            <img src={mapaImagens[cafe?.stadtteil ?? ""]} alt=""/>
           </div>
 
-          <div className="gallery">
-            <img src={cafe?.foto2} alt={"pic of " + cafe?.name} />
-            <img src={cafe?.foto3} alt={"pic of " + cafe?.name} />
-            <img src={cafe?.foto4} alt={"pic of " + cafe?.name} />
+          <div className={`gallery ${gallery ? "gallery-open" : ""}`}>
+            <button onClick={() => setGallery(!gallery)}>
+              <img src={cafe?.foto2} alt={"pic of " + cafe?.name} />
+            </button>
+            <button onClick={() => setGallery(!gallery)}>
+              <img src={cafe?.foto3} alt={"pic of " + cafe?.name} />
+            </button>
+            <button onClick={() => setGallery(!gallery)}>
+              <img src={cafe?.foto4} alt={"pic of " + cafe?.name} />
+            </button>
           </div>
         </div>
     </div>

@@ -32,8 +32,7 @@
     flex-wrap: nowrap;
 }
 
-.AllCafes,
-.OneCard-container{
+.AllCafes, .OneCard-container, .OtherCity-container{
     overflow-x: auto;
     padding: 0 var(--gap-md);
     scrollbar-width: none;
@@ -48,3 +47,22 @@
     flex: 0 0 auto;
 }
 
+.OtherCity-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.StartSeite section.othercity-section{ gap: 16px;}
+
+.othercity-titel{
+    display: flex; flex-direction: column;
+    gap: 0;
+
+    & p{
+        opacity: 0.6;
+        font-size: 18px;
+    }
+}

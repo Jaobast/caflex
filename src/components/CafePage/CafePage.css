@@ -1,6 +1,6 @@
 .CafePage{
     display: flex; flex-direction: column;
-    height: calc(100svh + 450px);
+    height: calc(100svh + 400px);
     overflow: hidden;
 }
 
@@ -15,8 +15,11 @@ body.no-scroll{
     z-index: -1;
     top: 0; left: 0;
     width: 100vw;
-    height: 90svh;
-    border-radius: 36px;
+    height: 80svh;
+    border-radius: 36px 36px 0 0;
+
+    /* mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%); */
 }
 
 .CafePage .container{
@@ -24,12 +27,14 @@ body.no-scroll{
     background-color: var(--coffee);
     display: flex; flex-direction: column;
     gap: var(--gap-lg);
-    padding: var(--gap-md) var(--gap-md) 0;
+    padding: var(--gap-md) 0 100px;
     border-radius: 36px 36px 0 0;
-
+    overflow: visible;
 }
 
 .CafePage .cafeinfo{
+    padding-left: var(--gap-md);
+    padding-right: var(--gap-md);
     display: flex; flex-direction: column;
     gap: var(--gap-md);
 
@@ -67,6 +72,8 @@ body.no-scroll{
 }
 
 .CafePage .map{
+    padding-left: var(--gap-md);
+    padding-right: var(--gap-md);
     position: relative;
     display: flex;
     flex: 1;
@@ -90,13 +97,48 @@ body.no-scroll{
 }
 
 .CafePage .gallery{
+    padding-left: var(--gap-md);
+    padding-right: var(--gap-md);
     display: flex; gap: 10px;
+    height: fit-content;
+    margin-top: -16px;
+}
+
+.CafePage .gallery button{
+    display: flex;
+    width: fit-content;
+    flex: 1;
+    border: none;
+    background-color: transparent;
 }
 
 .CafePage .gallery img{
-    display: flex;
-    width: 0;
-    flex: 1;
-    aspect-ratio: 4/5;
+    width: 100%;
+    aspect-ratio: 1/1.2;
     border-radius: 16px;
+}
+
+.CafePage .map.gallery-open{
+    & img{display: none;}
+    & button.bttn{
+        background-color: var(--light);
+        bottom: 34px;
+        & a{color: var(--coffee);}
+    }
+}
+
+.CafePage .gallery.gallery-open{
+
+    overflow-x: auto;
+    padding: 0 var(--gap-md);
+    scrollbar-width: none;
+    margin-top: -52px;
+    
+    & button{
+        display: block;
+    }
+    & img{
+        width: calc(100vw - 2 * (var(--gap-md)));
+        aspect-ratio: 1/1.1;
+    }
 }
