@@ -65,7 +65,7 @@ button.CafeCard, button.CardLarge, button.CardSmall{
         padding: 4px 2px;
 
         & h3{ font-size: 18px;}
-        & .spruch{ font-size: 14px;}
+        & .spruch{ font-size: 14px; opacity: 0.6;}
         & .stadtteil{ font-size: 12px; opacity: 0.6;}
     }
 }

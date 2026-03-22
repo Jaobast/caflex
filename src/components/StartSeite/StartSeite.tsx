@@ -29,11 +29,15 @@ const Startseite = () => {
         return localStorage.getItem("city") ?? "Düsseldorf";
     });
 
+    const [cityOption, setCityOption] = useState(false)
+
     const otherCity = city === "Düsseldorf" ? "Köln" : "Düsseldorf";
 
     function changeCity(newCity: string) {
         setCity(newCity);
         localStorage.setItem("city", newCity);
+
+        setCityOption(false)
     }
 
     const cafes = cafesTyped[city];
@@ -49,13 +53,21 @@ const Startseite = () => {
         <div className="StartSeite">
             <img className="logo" src="/caflex/svg/logo.svg" alt="logo" />
 
-            <div className="city-container padding-left">
-                <p>{city}</p>
-                <button onClick={() => changeCity("Düsseldorf")}>Düsseldorf</button>
-                <button onClick={() => changeCity("Köln")}>Köln</button>
+            <div className={`city-container ${cityOption ? "cityOption" : ""}`}>
+                <div className="cityname">
+                    <p onClick={() => setCityOption(!cityOption)}>{cityOption? "Stadt auswählen" : city}</p>
+                    <img src="/caflex/svg/arrow.svg" alt="icon pfeil" />
+                </div>
+                <button
+                    onClick={() => changeCity("Düsseldorf")}
+                    >Düsseldorf
+                </button>
+                <button
+                    onClick={() => changeCity("Köln")}>Köln
+                </button>
             </div>
 
-            <section className="OneCard-container">
+            <section className="scroll CardLarge-container">
                 {randomCafes.map((cafe) => (
                     <CafeCardLarge
                         key={cafe.id}
@@ -70,7 +82,7 @@ const Startseite = () => {
 
             <section>
                 <h2 className="padding-left" >Entdeck {city}</h2>
-                <div className="AllCafes">
+                <div className="scroll CafesList">
                     {cafes.map((cafe) => (
                         <CafeCard
                             id={cafe.id}
@@ -84,7 +96,7 @@ const Startseite = () => {
 
             <section>
                 <h2 className="padding-left">Little Tokyo</h2>
-                <div className="AllCafes">
+                <div className="scroll CafesList">
                     {cafes
                     .filter((cafe) => cafe.stadtteil === "Little Tokyo")
                     .map((cafe) => (
@@ -104,7 +116,7 @@ const Startseite = () => {
                     <h2 className="padding-left">Was es in anderer Stadt gibt</h2>
                     <p className="padding-left othercity-name">{otherCity}</p>
                 </div>
-                <div className="OtherCity-container">
+                <div className="scroll OtherCity-container">
                     {cafesOtherCity
                     .map((cafe) => (
                         <CafeCardSmall

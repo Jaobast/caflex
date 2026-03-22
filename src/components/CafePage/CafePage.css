@@ -17,9 +17,6 @@ body.no-scroll{
     width: 100vw;
     height: 80svh;
     border-radius: 36px 36px 0 0;
-
-    /* mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%); */
 }
 
 .CafePage .container{
