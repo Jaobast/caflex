@@ -7,7 +7,7 @@
 body.no-scroll{
     /* overflow: hidden; */
     color: var(--light);
-    background-color: var(--coffee);
+    background-color: var(--light);
 }
 
 .CafePage img.cafepic{
@@ -21,7 +21,8 @@ body.no-scroll{
 
 .CafePage .container{
     margin-top: 75svh;
-    background-color: var(--coffee);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 16.55%);
+    backdrop-filter: blur(11.25px);
     display: flex; flex-direction: column;
     gap: var(--gap-lg);
     padding: var(--gap-md) 0 100px;
@@ -87,7 +88,7 @@ body.no-scroll{
         position: absolute;
         bottom: 20px; left: 50%;
         transform: translateX(-50%);
-        background-color: var(--coffee);
+        background-color: var(--primary);
 
         & a{color: var(--light);}
     }
@@ -120,7 +121,7 @@ body.no-scroll{
     & button.bttn{
         background-color: var(--light);
         bottom: 34px;
-        & a{color: var(--coffee);}
+        & a{color: var(--secundary);}
     }
 }
 
