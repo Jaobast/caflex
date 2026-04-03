@@ -4,10 +4,10 @@
 @font-face { font-family: 'ExtraLight'; src: url('/fonts/LibreFranklin-ExtraLight.ttf');}
 
 :root{
-    --light: #F2E8E5;
+    --light: #F9F0E9;
     --primary: #002B8A;
-    --secundary: #6983BE;
-    --coffee: #694629;
+    --secundary: #A2B3D8;
+    --coffee: #4B3124;
 
     --gap-sm: 12px;
     --gap-md: 24px;

@@ -1,32 +1,35 @@
-.CafePage{
+.CafePage {
     display: flex; flex-direction: column;
-    height: calc(100svh + 400px);
-    overflow: hidden;
+    height: calc(100svh + 100px);
+    position: relative;
+    
+    overflow-y: auto;
+    scroll-snap-type: y proximity;
 }
 
 body.no-scroll{
-    /* overflow: hidden; */
-    color: var(--light);
-    background-color: var(--light);
+    overflow: hidden;
+    color: white;
+    padding-bottom: 0;
 }
 
 .CafePage img.cafepic{
     position: fixed;
     z-index: -1;
     top: 0; left: 0;
-    width: 100vw;
-    height: 80svh;
-    border-radius: 36px 36px 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 52px 52px 0 0;
 }
 
 .CafePage .container{
     margin-top: 75svh;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 16.55%);
+    background: linear-gradient(180deg, #4432284d 0%, var(--coffee) 50%);
     backdrop-filter: blur(11.25px);
     display: flex; flex-direction: column;
     gap: var(--gap-lg);
     padding: var(--gap-md) 0 100px;
-    border-radius: 36px 36px 0 0;
+    border-radius: 52px 52px 0 0;
     overflow: visible;
 }
 
@@ -40,7 +43,7 @@ body.no-scroll{
         display: flex; flex-direction: column;
 
         & h1, p{ text-align: center;}
-        & p{ opacity: 0.6;}
+        & p{ opacity: 0.8;}
 
     }
 
@@ -49,7 +52,7 @@ body.no-scroll{
     }
 
     & .opacity{
-        opacity: 0.6;
+        opacity: 0.8;
         font-size: 13px;
     }
 
@@ -65,7 +68,7 @@ body.no-scroll{
         align-items: center;
 
         & a {display: flex; align-items: center;}
-        & img.null{ opacity: 0.4;}
+        & img.null{ opacity: 0.2;}
     }
 }
 
@@ -88,7 +91,7 @@ body.no-scroll{
         position: absolute;
         bottom: 20px; left: 50%;
         transform: translateX(-50%);
-        background-color: var(--primary);
+        background-color: var(--coffee);
 
         & a{color: var(--light);}
     }
@@ -121,7 +124,7 @@ body.no-scroll{
     & button.bttn{
         background-color: var(--light);
         bottom: 34px;
-        & a{color: var(--secundary);}
+        & a{color: var(--coffee);}
     }
 }
 
