@@ -13,6 +13,21 @@ body.no-scroll{
     padding-bottom: 0;
 }
 
+.CafePage button.back{
+    position: fixed;
+    top: 50px; left: 15px;
+    width: 50px; height: 50px;
+    border-radius: 50px;
+    background: rgba(75, 49, 36, 0.20);
+    backdrop-filter: blur(11.25px);
+    border: none;
+
+    & img{
+        margin-left: -3px;
+        margin-bottom: -3px;
+    }
+}
+
 .CafePage img.cafepic{
     position: fixed;
     z-index: -1;

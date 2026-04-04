@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useBodyClass } from "../../hooks/useBodyClass";
 import cafesList from "../CafesList.json";
 import './CafePage.css'
@@ -18,6 +19,14 @@ function CafePage() {
   const [gallery, setGallery] = useState(false);
 
   useBodyClass("no-scroll");
+
+  const navigate = useNavigate();
+
+  function back() {
+    setTimeout(() => {
+      navigate(`/`);
+    }, 500);
+  }
 
   const mapaImagens: Record<string, string> = {
   "Stadtmitte": "/caflex/img/map/ddorf/Stadtmitte.jpg",
@@ -44,6 +53,9 @@ function CafePage() {
 
   return (
     <div className="CafePage">
+        <button className="back" onClick={back}>
+          <img src="/caflex/svg/back.svg" alt="icon back" />
+        </button>
         <img className="cafepic" src={cafe?.foto} alt={"pic of " + cafe?.name}/>
         <div className="container">
           <div className="cafeinfo">

@@ -7,7 +7,7 @@
     --light: #F9F0E9;
     --primary: #002B8A;
     --secundary: #A2B3D8;
-    --coffee: #4B3124;
+    --coffee: hsl(20, 35%, 22%);
 
     --gap-sm: 12px;
     --gap-md: 24px;
